@@ -30,7 +30,7 @@ npm manifest:
   {
     "name": "koa",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "loginWechat.js",
     "license": "MIT",
     "scripts": {
       "start": "nodemon app.js"

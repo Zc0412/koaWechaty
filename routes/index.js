@@ -1,7 +1,7 @@
 const Router = require("@koa/router");
 const router = new Router();
-const {send} = require("../controller/index")
+const {loginWechat} = require("../controller/loginWechat")
 
-router.get("/", send);
+router.get("/", loginWechat);
 
 module.exports = router;
