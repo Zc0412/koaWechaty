@@ -8,4 +8,9 @@ const wechatModel = async (username) => {
     return await wechat.save()
 }
 
-module.exports = {wechatModel}
+// 查询所有的WeChat用户
+const queryWechatUsersModel = async () => {
+    return Wechat.find({});
+}
+
+module.exports = {wechatModel, queryWechatUsersModel}

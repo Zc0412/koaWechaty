@@ -2,7 +2,9 @@ const {Wechaty} = require("wechaty");
 const {wechatModel} = require("../models/wechats")
 const qrTerm = require("qrcode-terminal");
 const schedule = require("node-schedule");
+const {YDWorldModel} = require('../models/ydWorld')
 
+// 定时任务启动了
 const scheduleCronstyle = () => {
     console.log('定时任务启动了')
     //每分钟的第30秒定时执行一次:
@@ -10,7 +12,10 @@ const scheduleCronstyle = () => {
         console.log('定时任务开始啦:' + new Date());
         const contact = await bot.Contact.find({name: '张'})
         try {
-            await contact.say(`定时任务开始啦，当前时间是：${new Date()}`);
+            const result = await YDWorldModel()
+            const {title, summary, source='未知'} = result && result[0]
+            await contact.say(`每日一句:\n${title}\n${summary}\n-----出自${source}`);
+            // await contact.say(`每日一句`);
         } catch (err) {
             console.log(err);
         }

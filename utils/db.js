@@ -16,4 +16,6 @@ let usersSchema = mongoose.Schema({
 // 创建一个model
 let Wechat = mongoose.model('wechatUsers', usersSchema);
 
+
+
 module.exports = {Wechat}

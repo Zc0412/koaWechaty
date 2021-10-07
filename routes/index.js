@@ -1,7 +1,10 @@
 const Router = require("@koa/router");
 const router = new Router();
-const {loginWechat} = require("../controller/loginWechat")
+const {queryWechatUsers} = require("../controller/queryWechatUsers")
+const {YDWorld} = require("../controller/ydWorld")
 
-router.get("/", loginWechat);
+// 获取所有的用户
+router.get("/queryWechatUsers", queryWechatUsers);
+router.get("/YDWorld", YDWorld);
 
 module.exports = router;
